@@ -18,10 +18,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 const PricingTable = () => {
-  const [open, setOpen] = useState(true); // State to manage dialog open/close
+  const [open, setOpen] = useState(true); 
 
   const handleClose = () => {
-    setOpen(false); // Close the dialog when the close icon is clicked
+    setOpen(false); 
   };
 
   const pricingItems = [
@@ -39,7 +39,7 @@ const PricingTable = () => {
         Pricing Table
         <IconButton
           aria-label="close"
-          onClick={handleClose} // Close dialog on click
+          onClick={handleClose}
           sx={{ position: 'absolute', right: 8, top: 8 }}
         >
           <CloseIcon />

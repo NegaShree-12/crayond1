@@ -13,7 +13,7 @@ import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
-// Custom styled switch component
+
 const IOSSwitch = styled((props) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
 ))(({ theme }) => ({
@@ -85,10 +85,10 @@ const StyledDialogTitle = styled(DialogTitle)(({ theme }) => ({
 }));
 
 const SummaryBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "#ffe4e1", // Matching the color from the image
+  backgroundColor: "#ffe4e1", 
   padding: theme.spacing(2),
-  borderRadius: "8px", // Slightly rounded corners
-  marginBottom: theme.spacing(2), // Space below the summary box
+  borderRadius: "8px", 
+  marginBottom: theme.spacing(2), 
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
@@ -98,11 +98,11 @@ const AmenitiesItem = ({ image, title, price, dates, checked, onToggle }) => {
   return (
     <Box
       sx={{
-        border: "1px solid #ddd", // Light gray border for the card
-        borderRadius: "8px", // Rounded corners
-        padding: "10px", // Spacing inside the box
-        mb: 2, // Margin bottom for spacing between items
-        boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)", // Slight shadow for depth
+        border: "1px solid #ddd", 
+        borderRadius: "8px",
+        padding: "10px", 
+        mb: 2, 
+        boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)", 
         display: "flex",
         alignItems: "center",
       }}
@@ -136,7 +136,7 @@ const AmenitiesItem = ({ image, title, price, dates, checked, onToggle }) => {
 const AddAmenitiesDialog = ({
   open,
   onClose,
-  amenities = [], // Default to an empty array if undefined
+  amenities = [], 
   totalAmenities,
   totalCost,
   onToggle,
@@ -146,10 +146,10 @@ const AddAmenitiesDialog = ({
   };
 
   const ScrollableBox = styled(Box)({
-    maxHeight: 300, // Adjust the height as needed
+    maxHeight: 300, 
     overflowY: "auto",
     marginTop: 16,
-    // Custom scrollbar styles
+    
     "&::-webkit-scrollbar": {
       width: "4px",
     },
@@ -181,7 +181,7 @@ const AddAmenitiesDialog = ({
         </IconButton>
       </StyledDialogTitle>
 
-      {/* Summary box for total amenities and cost */}
+      
       <DialogContent dividers>
         <SummaryBox>
           <Typography sx={{ fontFamily: "Nunito Sans" }} variant="h6">
@@ -198,7 +198,7 @@ const AddAmenitiesDialog = ({
 
         <Divider />
 
-        {/* Scrollable Box for the list of amenities */}
+        
         <ScrollableBox>
           {amenities && amenities.length > 0 ? (
             amenities.map((amenity, index) => (
@@ -218,7 +218,7 @@ const AddAmenitiesDialog = ({
         </ScrollableBox>
       </DialogContent>
 
-      {/* Update & Save button */}
+     
       <DialogActions>
         <Button
           onClick={handleClose}
