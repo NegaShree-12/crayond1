@@ -9,6 +9,8 @@ import Unitdetails from './components/Unitdetails';
 import Summary from './components/Summary';
 import Downnavbar from './components/Downnavbar';
 import Listdetails1 from './listdetails/listdetails1';
+import PricingTable from './listdetails/listdetails2';
+import AddAmenitiesDialog from './listdetails/listdetails3';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +23,8 @@ root.render(
     </div>
     <Downnavbar/>
     {/* <Listdetails1/> */}
+    {/* <PricingTable/> */}
+     {/* <AddAmenitiesDialog/>  */}
   </React.StrictMode>   
 );
 
