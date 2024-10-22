@@ -1,11 +1,17 @@
-import React from 'react'
-import { Box } from '@mui/material'
-import Estate from '../estate.png'
-import SvgComponent2 from './Svgcomponent2'
-import SvgComponent3 from './Svgcomponent3'
-import SvgComponent4 from './Svgcomponent4'
+import React, { useState } from 'react';
+import { Box } from '@mui/material';
+import Estate from '../estate.png';
+import SvgComponent2 from './Svgcomponent2';
+import SvgComponent3 from './Svgcomponent3';
+import SvgComponent4 from './Svgcomponent4';
+import PricingTable from '../listdetails/listdetails2';
+import AmenitiPop from '../listdetails/listdetails3';
 
 function Unitdetails() {
+  const [showDropdown, setShowDropdown] = useState(null); 
+  const [showPricingTable, setShowPricingTable] = useState(false); 
+  const [showAmenities, setShowAmenities] = useState(false); 
+
   const styles = {
     unitdetails: {
       width: '35%',
@@ -16,7 +22,7 @@ function Unitdetails() {
       marginLeft: '28px',
       display: 'flex',
       flexDirection: 'column',
-      backgroundColor:'#F5F7FAE6'
+      backgroundColor: '#F5F7FAE6'
     },
     header: {
       color: '#4E5A6B',
@@ -91,6 +97,26 @@ function Unitdetails() {
       fontWeight: 'bold',
       fontSize: '16px',
       gap: '5px',
+      position: 'relative',
+    },
+    dropdown: {
+      position: 'absolute',
+      top: '160px',
+      right: '-115px',
+      backgroundColor: '#FFFFFF',
+      boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+      borderRadius: '8px',
+      padding: '10px',
+      zIndex: 1000,
+    },
+    dropdownItem: {
+      padding: '8px 12px',
+      cursor: 'pointer',
+      fontSize: '14px',
+      color: '#333',
+      '&:hover': {
+        backgroundColor: '#f0f0f0',
+      },
     },
     discountBox: {
       position: 'absolute',
@@ -108,7 +134,19 @@ function Unitdetails() {
       justifyContent: 'space-between',
       gap: '10px',
     },
-  }
+  };
+
+  const toggleDropdown = (index) => {
+    setShowDropdown(showDropdown === index ? null : index); 
+  };
+
+  const handleDropdownItemClick = (option) => {
+    if (option === 'Add Pricing Component') {
+      setShowPricingTable(true); 
+    } else if (option === 'Add Amenities') {
+      setShowAmenities(true); 
+    }
+  };
 
   return (
     <Box sx={styles.unitdetails}>
@@ -154,17 +192,45 @@ function Unitdetails() {
                     </Box>
                   </Box>
                 </Box>
-                <Box sx={styles.customButton}>
-                  <span style={{fontSize:'28px',marginTop:'-3px'}}>+</span>
+                <Box sx={styles.customButton} onClick={() => toggleDropdown(index)}>
+                  <span style={{ fontSize: '28px', marginTop: '-3px' }}>+</span>
                   <span>Customise</span>
                 </Box>
+                {showDropdown === index && (
+                  <Box sx={styles.dropdown}>
+                    <Box
+                      sx={styles.dropdownItem}
+                      onClick={() => handleDropdownItemClick('Add Pricing Component')}
+                    >
+                      Add Pricing Component
+                    </Box>
+                    <Box
+                      sx={styles.dropdownItem}
+                      onClick={() => handleDropdownItemClick('Add Amenities')}
+                    >
+                      Add Amenities
+                    </Box>
+                    <Box sx={styles.dropdownItem}>Add Utilities</Box>
+                    <Box sx={styles.dropdownItem}>Add Discount</Box>
+                    <Box sx={styles.dropdownItem}>Remove Component</Box>
+                  </Box>
+                )}
               </Box>
-            )
+            );
           })}
         </Box>
       </Box>
+
+      {showPricingTable && <PricingTable />}
+
+      {showAmenities && (
+        <AmenitiPop
+          openAminitiesDialog={showAmenities}
+          setOpenAminitiesDialog={setShowAmenities}
+        />
+      )}
     </Box>
-  )
+  );
 }
 
-export default Unitdetails
+export default Unitdetails;

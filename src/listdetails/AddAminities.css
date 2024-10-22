@@ -1,0 +1,134 @@
+.amenitespopocn {
+    width: 25%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    background-color: #FFFFFF;
+    z-index: 2000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ammunitcon {
+    height: 93%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amunifon {
+    height: 95%;
+    width: 95%;
+}
+
+.amunitbaner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12%;
+    width: 100%;
+    background-color: #FEEAEA80;
+    border-radius: 4px;
+    color: #B3776D;
+}
+
+.amubancont {
+    display: flex;
+    font-size: 16px;
+    width: 65%;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+}
+
+.amubanpri {
+    height: 100%;
+    font-weight: bold;
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.availaamit {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: #98A0AC;
+}
+
+.tooglecon {
+    height: 75%;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scrollbar-width: none;
+}
+
+.tooglecard {
+    width: 91%;
+    border: 1px solid #E4E8EE;
+    border-radius: 6px;
+    padding: 10px 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.toggleimgcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 12%;
+}
+
+.toggleimgcon img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.toogebancont {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 62%;
+    justify-content: space-evenly;
+}
+
+.togcontne {
+    display: flex;
+    height: 50%;
+    align-items: center;
+    gap: 7px;
+    justify-content: start;
+    color: #091B29;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.contswitch {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.updatesavcon {
+    height: 8%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}

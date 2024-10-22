@@ -11,6 +11,7 @@ import Downnavbar from './components/Downnavbar';
 import Listdetails1 from './listdetails/listdetails1';
 import PricingTable from './listdetails/listdetails2';
 import AddAmenitiesDialog from './listdetails/listdetails3';
+import AmenitiPop from './listdetails/listdetails3';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +26,7 @@ root.render(
     {/* <Listdetails1/> */}
     {/* <PricingTable/> */}
      {/* <AddAmenitiesDialog/>  */}
+     {/* <AmenitiPop/> */}
   </React.StrictMode>   
 );
 
